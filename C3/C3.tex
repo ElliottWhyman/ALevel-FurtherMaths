@@ -1,0 +1,143 @@
+\documentclass{article}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{relsize}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\begin{document}
+	\title{Edexcel AS and A Level Modular Mathematics\\ Core 3}
+	\author{Elliott Whyman}
+	\maketitle		
+	\tableofcontents
+	\section{Algebraic Fractions}
+	\section{Functions}
+	\subsection{Function Definition}
+	A function is a mapping such that every element of set $A$ is mapped to exactly one element of set $B$.
+	\\  
+	The mapping set is considered to be the domain of the function, and the mapped set is considered to be the range.
+	\\\\
+	Consider the set, $A$, $\{1,2,3,4,5\}$ being mapped to set $B$, $\{1,4,16,25\}$ through the operation of $square$.
+	Set $A$ is the domain and set $B$ is the range.
+	\\\\
+	The function can be defined by:
+	\\\\
+	\hspace*{\fill}{$f(x)=x^2$, $\{1\leq x \leq5\}$} \hfill {$f:x \rightarrow x^2$, $\{1\leq x \leq5\}$} \hspace*{\fill}
+	\\\\
+	\begin{center}
+		It's range is subsequently defined by $$1\leq f(x) \leq 25$$
+	\end{center}
+	Consider the function $f:x \rightarrow \sqrt{x}$. It can only be considered a function if it's domain is greater than zero. Else it would have values less than zero that are not mapped anywhere as they do not have a real solution.
+	\begin{center}
+		$f:x \rightarrow \sqrt{x}$, $\{x \in \mathbb{R} , x \geq 0\}$
+	\end{center}
+	\subsection{Composite Functions}
+	Multiple functions can be combined to make a composite function.
+	\\\\
+	\begin{center}
+		\begin{tabular}{ccc}
+			$fg(x)$ & $\Rightarrow$ & $f(g(x))$ \\
+			$gf(x)$ & $\Rightarrow$ & $g(f(x))$ \\
+			$f^2(x)$ & $\Rightarrow$ & $f(f(x))$
+		\end{tabular}
+	\end{center}
+	\subsection{Inverse Functions} \label{subsec:inverse}
+	The inverse function performs the opposite operation in reverse order to get the original input of the function. When graphed, the inverse function is a reflection of the original function in the line $y=x$
+	\\\\
+	An inverse function is noted by $f^{-1}(x)$
+	\\\\
+	\begin{center}
+		\begin{tabular}{rcl}
+			$f(x)=x^2$ & $\Rightarrow$ & $f^{-1}(x)=\sqrt{x}$ \\
+			$f(x)=5x+2$ & $\Rightarrow$ & $\displaystyle{ f^{-1}(x)=\frac{x-2}{5}}$ \\
+			$f(x)=2x^2-9$ & $\Rightarrow$ & $\displaystyle{f^{-1}(x)=\sqrt{\frac{x+9}{2}}}$
+		\end{tabular}
+	\end{center}
+	\newpage
+	\section{Exponentials and Logarithmic Functions}
+	Exponential functions are in the form $y=a^x$ and categories any functions containing exponents. 
+	\subsection{The Exponential Function}
+	The exponential function is $y=e^x$, $e \approx 2.718$. At any point, the function is equal to it's gradient, and is therefore refereed to as \textbf{the} exponential function. It is used to represent exponential growth, which is how population growth is modeled 
+	\begin{center}
+		$$\frac{d\lbrack e^x \rbrack}{dy}=e^x$$ 
+	\end{center}
+	\subsection{Graphing Exponential Functions}
+	\begin{center}
+		\begin{tikzpicture}
+			\begin{axis}[axis lines = middle, xlabel = $x$, ylabel = $y$,]
+				\addplot[domain=-2:2, color=red,]{exp(x)};
+				\addlegendentry{$e^x$}
+				\addplot[domain=-2:2, color=blue,]{exp(-x)};
+				\addlegendentry{$e^{-x}$}
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+	\subsection{The Inverse of the Exponential Function}
+	To understand the inverse of the exponential function, it is necessary to read section \ref{subsec:inverse}.
+	\\\\
+	The inverse of $e^x$ is $\log_ex$. A log with base $e$ is referred to as the \textit{natural log}, $\ln x$. 
+	
+	\begin{center}
+		\begin{tikzpicture}
+		\begin{axis}[axis lines = middle, xlabel = $x$, ylabel = $y$, ymin=-5, ymax=5, samples=100, , xmin=-3]
+		\addplot[domain=-5:5, color=red,]{exp(x)};
+		\addlegendentry{$e^x$}
+		\addplot[domain=-5:5,color=blue,]{ln(x)};
+		\addlegendentry{$\ln x$}
+		\addplot[domain=-5:5, color=black, dashed]{x};
+		\end{axis}
+		\end{tikzpicture}
+	\end{center}
+	\section{Numerical Methods}
+	\subsection{Finding Approximations Graphically }
+	\subsection{Finding Approximations Iteratively and Algebraically}
+	\section{Transforming Graphs of Functions}
+	\subsection{Sketching the Modulus Function}
+	\subsection{Solving Equations Involving Modulus}
+	\subsection{Applying Combinations of Transformations}
+	\section{Trigonometry}
+	\subsection{Introduction of Secant, Co-secant and Cotangent Functions}
+	\begin{center}
+		\begin{tabular}{lcl}
+			$\sec\theta$ & = & $\displaystyle{\frac{1}{\cos\theta}}$ \\\\
+			$\csc\theta$ & = & $\displaystyle{\frac{1}{\sin\theta}}$ \\\\
+			$\cot\theta$ & = & $\displaystyle{\frac{1}{\tan\theta}}$ 
+		\end{tabular}
+	\end{center}
+	\begin{tabular}{lcr}
+		\begin{tikzpicture}
+			\begin{axis}[axis lines = middle, xlabel = $x$, ylabel = $y$, xmin=-6, ymin=-2, ymax=2, xmax=6, samples=100]
+			\addplot[color=red]{sec(deg(x)))};
+			\addplot[color=black]{cos(deg(x))};
+			\end{axis} 
+		\end{tikzpicture}
+		&
+		\begin{tikzpicture}
+		\begin{axis}[axis lines = middle, xlabel = $x$, ylabel = $y$, xmin=-6, ymin=-2, ymax=2, xmax=6, samples=100]
+		\addplot[color=red]{cosec(deg(x)};
+		\addplot[color=black]{sin(deg(x))};
+		\end{axis}
+		\end{tikzpicture} 
+		&
+		\begin{tikzpicture}
+		\begin{axis}[axis lines = middle, xlabel = $x$, ylabel = $y$, xmin=-6, ymin=-2, ymax=2, xmax=6, samples=100]
+		\addplot[color=red]{cot(deg(x)))};
+		\addplot[color=black]{tan(deg(x))};
+		\end{axis} 
+		\end{tikzpicture}
+	\end{tabular}
+	\subsection{Proving Identities}
+	\section{Further Trigonometric Identities }
+	\subsection{Addition Trigonometrical Formulae}
+	\subsection{Double Angle Trigonometrical Formulae}
+	\subsection{Expressing $a\cos\theta + b\sin\theta$ In a Single Trigonometric Function}
+	\subsection{The Factor Fomulae}
+	\section{Differentiation}
+	\subsection{Differentiating Using The Chain Rule}
+	\subsection{Differentiating Using The Product Rule}
+	\subsection{Differentiating Using The Quotient Rule}
+	\subsection{Differentiating The Exponential Function}
+	\subsection{Differentiating The Logarithmic Function}
+	\subsection{Differentiating The Trigonometric and Further Trigonometric Functions}
+	\subsection{Differentiating Composite Functions}
+\end{document}
