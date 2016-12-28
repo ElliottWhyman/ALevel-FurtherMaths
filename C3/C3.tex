@@ -11,6 +11,7 @@
 	\maketitle		
 	\tableofcontents
 	\section{Algebraic Fractions}
+	\newpage
 	\section{Functions}
 	\subsection{Function Definition}
 	A function is a mapping such that every element of set $A$ is mapped to exactly one element of set $B$.
@@ -41,6 +42,7 @@
 			$f^2(x)$ & $\Rightarrow$ & $f(f(x))$
 		\end{tabular}
 	\end{center}
+	To solve these composite functions, take the inner most function and input it as an parameter into the its nested function and so on.
 	\subsection{Inverse Functions} \label{subsec:inverse}
 	The inverse function performs the opposite operation in reverse order to get the original input of the function. When graphed, the inverse function is a reflection of the original function in the line $y=x$
 	\\\\
@@ -95,37 +97,48 @@
 	\subsection{Sketching the Modulus Function}
 	\subsection{Solving Equations Involving Modulus}
 	\subsection{Applying Combinations of Transformations}
+	\newpage
 	\section{Trigonometry}
-	\subsection{Introduction of Secant, Co-secant and Cotangent Functions}
+	\subsection{Introduction of Secant, Co-Secant and Co-Tangent Functions}
 	\begin{center}
-		\begin{tabular}{lcl}
-			$\sec\theta$ & = & $\displaystyle{\frac{1}{\cos\theta}}$ \\\\
-			$\csc\theta$ & = & $\displaystyle{\frac{1}{\sin\theta}}$ \\\\
-			$\cot\theta$ & = & $\displaystyle{\frac{1}{\tan\theta}}$ 
+		\begin{tabular}{clcl}
+			The Secant function is the reciprocal of the Sine function & $\sec\theta$ & = & $\displaystyle{\frac{1}{\cos\theta}}$ \\\\
+			The Co-Secant function is the reciprocal of the Cosine function &$\csc\theta$ & = & $\displaystyle{\frac{1}{\sin\theta}}$ \\\\
+			The Co-Tangent function is the reciprocal of the Sine Tangent function &$\cot\theta$ & = & $\displaystyle{\frac{1}{\tan\theta}}$ 
 		\end{tabular}
 	\end{center}
-	\begin{tabular}{lcr}
+	An easy way to identify each function from its abbreviated notation is to compare its 3rd character to the begging of each standard Trigonometric Function
+	\begin{center}
 		\begin{tikzpicture}
-			\begin{axis}[axis lines = middle, xlabel = $x$, ylabel = $y$, xmin=-6, ymin=-2, ymax=2, xmax=6, samples=100]
-			\addplot[color=red]{sec(deg(x)))};
-			\addplot[color=black]{cos(deg(x))};
-			\end{axis} 
-		\end{tikzpicture}
-		&
-		\begin{tikzpicture}
-		\begin{axis}[axis lines = middle, xlabel = $x$, ylabel = $y$, xmin=-6, ymin=-2, ymax=2, xmax=6, samples=100]
-		\addplot[color=red]{cosec(deg(x)};
-		\addplot[color=black]{sin(deg(x))};
+		\begin{axis}[axis lines = middle, domain=0:12, ymin=-2, ymax=2, xmin=0, xmax=12, samples=100]
+			\addplot[color=black]{sin(deg(x))};
+			\addplot[color=red]{cosec(deg(x))};
 		\end{axis}
-		\end{tikzpicture} 
-		&
-		\begin{tikzpicture}
-		\begin{axis}[axis lines = middle, xlabel = $x$, ylabel = $y$, xmin=-6, ymin=-2, ymax=2, xmax=6, samples=100]
-		\addplot[color=red]{cot(deg(x)))};
-		\addplot[color=black]{tan(deg(x))};
-		\end{axis} 
 		\end{tikzpicture}
-	\end{tabular}
+	\end{center}
+	Above, the Sine function is graphed in black. As defined earlier it is that the Co-Secant function is reciprocal of the Sine function. \textit{Not to be confused with the inverse Sine function, $\arcsin$, $\sin^{-1}\theta$}. $$\csc\theta = \frac{1}{\sin\theta}$$ From analysing the plot above, asymptotes are present whenever the Sine function intersects with the x-axis, this is caused as at the intersection $\sin\theta=0$ and as $\csc\theta\equiv\frac{1}{\sin\theta}$ therefore $\csc\theta=\frac{1}{0}$ is undefined - causing an asymptote. This causes $y=\csc\theta$ to tend to infinity as it approaches  $\sin\theta=0$. $$\sin\theta \to 0 \Rightarrow \csc\theta\to\infty$$
+	\\
+	\begin{center}
+		\begin{tikzpicture}
+		\begin{axis}[axis lines = middle, domain=0:12, ymin=-2, ymax=2, xmin=0, xmax=12, samples=100]
+		\addplot[color=black]{cos(deg(x))};
+		\addplot[color=red]{sec(deg(x))};
+		\end{axis}
+		\end{tikzpicture}
+	\end{center}
+	The Cosine function above is also graphed in black, and we know it to be a transformation of the Sine function. As defined earlier it is that the Secant function is reciprocal of the Cosine function. \textit{Not to be confused with the inverse Cosine function, $\arccos$, $\cos^{-1}\theta)$}. $$\sec\theta = \frac{1}{\cos\theta}$$  From analysing the plot above, asymptotes are present whenever the Cosine function intersects with the x-axis, this is caused as at the intersection $\cos\theta=0$ and as $\sec\theta\equiv\frac{1}{\cos\theta}$ therefore $\sec\theta=\frac{1}{0}$ is undefined - causing an asymptote. This causes $y=\sec\theta$ to tend to infinity as it approaches $\cos\theta=0$. $$\cos\theta \to 0 \Rightarrow \sec\theta\to\infty$$
+	\\
+	\begin{center}
+		\begin{tikzpicture}
+		\begin{axis}[axis lines = middle, domain=0:8, ymin=-2, ymax=2, xmin=0, xmax=8, samples=100]
+		\addplot[color=black]{tan(deg(x))};
+		\addplot[color=red]{cot(deg(x))};
+		\end{axis}
+		\end{tikzpicture}
+	\end{center}
+	Above, the Tangent function is graphed in black. As defined earlier it is that the Co-Tangent function is reciprocal of the Tan function. \textit{Not to be confused with the inverse Tangent function, $\arctan$, $\tan^{-1}(x)$}. $$\cot\theta = \frac{1}{\tan\theta}$$ From analysing the plot above, asymptotes are present whenever the Tan function intersects with the x-axis, as graphed on the normal Tangent function. As like before, there are also asymptotes whenever the Tangent function intersecs with the x-axis, this is caused as at the intersection $\tan\theta=0$ and as $\cot\theta\equiv\frac{1}{\tan\theta}$ therefore $\cot\theta=\frac{1}{0}$ is undefined - causing an asymptote. This causes $y=\cot\theta$ to tend to infinity as it approaches $\tan\theta=0$. $$\tan\theta \to 0 \Rightarrow \cot\theta\to\infty$$
+	
+	
 	\subsection{Proving Identities}
 	\section{Further Trigonometric Identities }
 	\subsection{Addition Trigonometrical Formulae}
